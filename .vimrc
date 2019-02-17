@@ -59,7 +59,7 @@ autocmd Filetype cpp inoremap ;e enum /*Enum Name*/{<Space><Space>};
 autocmd FileType cpp inoremap ;fv void /*functionname*/(){<Enter><Enter>}
 "includes
 autocmd Filetype cpp inoremap ;i #include <iostream><Enter> 
-autocmd Filetype cpp inoremap ;l #include using namespace std;<Enter>
+autocmd Filetype cpp inoremap ;u using namespace std;<Enter>
 
 
 "=== Vim Shortcuts === 
