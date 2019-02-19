@@ -36,7 +36,7 @@ autocmd Filetype cpp inoremap ;u using namespace std;<Enter>
 
 
 
-"=== ruby shortcuts
+"=== python shortcuts ===
 
 
 "=== Vim Shortcuts === 
