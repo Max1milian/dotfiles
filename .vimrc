@@ -20,7 +20,7 @@ autocmd FileType c,cpp inoremap ;sw switch(/*switch on*/)<Enter>{<Enter>default:
 "structures
 autocmd FileType c,cpp inoremap ;s struct /*Structure name*/<Enter>{<Enter><Enter>};
 autocmd Filetype c,cpp inoremap ;e enum /*Enum Name*/{<Space><Space>};
-autocmd Filtetype cpp  inoremap ;c class /*Class Name*/{<Enter>public:<Enter>private:<Enter>}
+autocmd Filetype cpp   inoremap ;c class /*Class Name*/{<Enter>public:<Enter>private:<Enter>}
 
 "functions
 autocmd FileType c,cpp inoremap ;m int main(){<Enter><Enter>return EXIT_SUCCESS;<Enter>} 
