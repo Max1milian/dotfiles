@@ -7,8 +7,8 @@ set number
 "=== C/C++ snippets === 
 
 "loops
-autocmd FileType c,cpp inoremap ;f for(int i = 0; i < /*value*/; i++)<Enter>{<Enter><Enter>}
-autocmd FileType c,cpp inoremap ;w while(/*boolean*/)<Enter>{<Enter> <Enter>}
+autocmd FileType c,cpp inoremap ;f for(int i = 0; i < /*value*/; i++){<Enter><Enter>}
+autocmd FileType c,cpp inoremap ;w while(/*boolean*/){<Enter> <Enter>}
 autocmd FileType c,cpp inoremap ;d do {<Enter><Enter>} while(/*boolean*/);
 
 "statements
