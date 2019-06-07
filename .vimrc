@@ -12,13 +12,13 @@ autocmd FileType c,cpp inoremap ;w while(/*boolean*/)<Enter>{<Enter> <Enter>}
 autocmd FileType c,cpp inoremap ;d do {<Enter><Enter>} while(/*boolean*/);
 
 "statements
-autocmd FileType c,cpp inoremap ;if if(/*boolean*/)<Enter>{<Enter><Enter>}
-autocmd FileType c,cpp inoremap ;ef else<Enter>{<Enter><Enter>}
-autocmd FileType c,cpp inoremap ;efi else if(/*boolean*/)<Enter>{<Enter><Enter>}
-autocmd FileType c,cpp inoremap ;sw switch(/*switch on*/)<Enter>{<Enter>default:<Enter>break;<Enter>}
+autocmd FileType c,cpp inoremap ;if if(/*boolean*/){<Enter><Enter>}
+autocmd FileType c,cpp inoremap ;ef else {<Enter><Enter>}
+autocmd FileType c,cpp inoremap ;efi else if(/*boolean*/){<Enter><Enter>}
+autocmd FileType c,cpp inoremap ;sw switch(/*switch on*/){<Enter>default:<Enter>break;<Enter>}
 
 "structures
-autocmd FileType c,cpp inoremap ;s struct /*Structure name*/<Enter>{<Enter><Enter>};
+autocmd FileType c,cpp inoremap ;s struct /*Structure name*/ {<Enter><Enter>};
 autocmd Filetype c,cpp inoremap ;e enum /*Enum Name*/{<Space><Space>};
 autocmd Filetype cpp   inoremap ;c class /*Class Name*/{<Enter>public:<Enter>private:<Enter>}
 
