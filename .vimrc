@@ -20,9 +20,10 @@ autocmd FileType c,cpp inoremap ;sw switch(/*switch on*/)<Enter>{<Enter>default:
 "structures
 autocmd FileType c,cpp inoremap ;s struct /*Structure name*/<Enter>{<Enter><Enter>};
 autocmd Filetype c,cpp inoremap ;e enum /*Enum Name*/{<Space><Space>};
+autocmd Filtetype cpp  inoremap ;c class /*Class Name*/{<Enter>public:<Enter>private:<Enter>}
 
 "functions
-autocmd FileType c,cpp inoremap ;m int main()<Enter>{<Enter><Enter>return EXIT_SUCCESS;<Enter>} 
+autocmd FileType c,cpp inoremap ;m int main(){<Enter><Enter>return EXIT_SUCCESS;<Enter>} 
 autocmd FileType c,cpp inoremap ;fi int /*functionname*/(){<Enter><Enter>return/*integer*/;<Enter>}
 autocmd FileType c,cpp inoremap ;fd double /*functionname*/(){<Enter><Enter>return/*integer*/;<Enter>}
 autocmd FileType c,cpp inoremap ;fv void /*functionname*/(){<Enter><Enter>}
@@ -36,7 +37,7 @@ autocmd Filetype cpp inoremap ;u using namespace std;<Enter>
 
 
 
-"=== python shortcuts ===
+"=== lua shortcuts ===
 
 
 "=== Vim Shortcuts === 
