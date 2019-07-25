@@ -1,8 +1,19 @@
-execute pathogen#infect()
 syntax on
 filetype plugin indent on
 set nocompatible
 set number
+set rtp+=~/.vim/bundle/Vundle.vim
+
+"Vim Vundle Plugins
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'scrooloose/nerdtree'
+Plugin 'honza/vim-snippets'
+Plugin 'Valloric/YouCompleteMe'
+
+call vundle#end()
 
 "=== C/C++ snippets === 
 
