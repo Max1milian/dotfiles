@@ -12,8 +12,13 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'honza/vim-snippets'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
 
 call vundle#end()
+"Vim ultisnips 
+let g:UltiSnipsExpandTrigger="<enter>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 "=== C/C++ snippets === 
 
