@@ -10,6 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 
@@ -54,3 +55,6 @@ map <f3> <Esc>:q!<Enter>
 "Addons
 map <f5> <Esc>:NERDTree<Enter>
 map <f4> <Esc>:PluginInstall<Enter>
+
+"YouCompleteMe
+let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py’
