@@ -39,7 +39,7 @@ autocmd FileType c,cpp inoremap  fv<tab> void /*functionname*/(){<Enter><Enter>}
 
 "includes
 autocmd Filetype c,cpp inoremap  include<tab>  #include <><Enter> 
-autocmd Filetype cpp inoremap  u using namespace std;<Enter>
+autocmd Filetype cpp inoremap  usings<tab> using namespace std;<Enter>
 
 "=== Python shortcuts ===
 
