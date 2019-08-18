@@ -107,10 +107,24 @@ if ! shopt -oq posix; then
   fi
 fi
 
+#checking if git exist
+if ! [-e /usr/bin/git]; then
+	sudo apt install git
+fi
+
+#checking if gcc-8 and g++-8 exist
+if [-e /usr/bin/gcc-8] && -e [-e /usr/bin/g++-8]; then
+	sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
+	else
+	sudo apt install gcc-8 g++-8 -y
+fi
+
 #checking if vundle exists
-if ![-d ~/.vim/bundle/Vundle.vim]; then
+if ! [-d ~/.vim/bundle/Vundle.vim]; then
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+
 #checking if .vimrc exists
-if ![ -e ~/.vimrc]; then
+if ! [ -e ~/.vimrc]; then
 	wget raw.githubusercontent.com/Max1milian/my-vimrc/master/.vimrc
 fi
