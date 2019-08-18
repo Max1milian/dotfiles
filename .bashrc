@@ -107,14 +107,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#checking if gcc-8 and g++-8 are existing
-if [-e /usr/bin/gcc-8]; then
-	sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
-fi	
-#checking if git exists
-if ![-e /usr/bin/git]; then
-	sudo apt install git -y 
-fi
 #checking if vundle exists
 if ![-d ~/.vim/bundle/Vundle.vim]; then
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
