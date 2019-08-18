@@ -41,7 +41,7 @@ autocmd FileType c,cpp inoremap  fv<tab> void /*functionname*/(){<Enter><Enter>}
 autocmd Filetype c,cpp inoremap  include<tab>  #include <><Enter> 
 autocmd Filetype cpp inoremap  usings<tab> using namespace std;<Enter>
 
-"=== Python shortcuts ===
+"=== BASH Snippets ===
 
 
 "=== Vim Shortcuts === 
