@@ -110,6 +110,8 @@ fi
 #checking if gcc-8 and g++-8 are existing
 if [-e /usr/bin/gcc-8 && -e /usr/bin/g++-8]; then
 	sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
+else
+	sudo apt install gcc-8 g++-8
 fi	
 #checking if git exists
 if ![-e /usr/bin/git]; then
