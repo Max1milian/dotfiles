@@ -115,8 +115,6 @@ fi
 #checking if gcc-8 exist
 if [-e /usr/bin/gcc-8]; then
 	sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
-	else
-	sudo apt install gcc-8 g++-8 -y
 fi
 
 #checking if vundle exists
