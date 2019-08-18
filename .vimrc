@@ -38,7 +38,7 @@ autocmd FileType c,cpp inoremap  fd<tab> double /*functionname*/(){<Enter><Enter
 autocmd FileType c,cpp inoremap  fv<tab> void /*functionname*/(){<Enter><Enter>}
 
 "includes
-autocmd Filetype c,cpp inoremap  include<tab>  #include<><Enter> 
+autocmd Filetype c,cpp inoremap  include<tab>  #include<>
 autocmd Filetype cpp inoremap  usings<tab> using namespace std;<Enter>
 
 "=== BASH Snippets ===
