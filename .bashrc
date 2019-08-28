@@ -104,11 +104,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if ! [ -e /usr/bin/gcc-8 ] && [ -e /usr/bin/g++-8 ]; then
-    sudo apt install gcc-8 g++-8 -y 
-    sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
-fi
-
 if ! [ -e /usr/bin/git ]; then 
     sudo apt install git -y 
 fi
