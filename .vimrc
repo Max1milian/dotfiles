@@ -3,6 +3,7 @@ filetype plugin indent on
 set nocompatible
 set number
 set rtp+=~/.vim/bundle/Vundle.vim
+set path+=**
 
 "Vim Vundle Plugins
 call vundle#begin()
