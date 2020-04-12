@@ -1,4 +1,4 @@
-export ZSH="/home/maxi/.oh-my-zsh"
+export ZSH="$(pwd)/.oh-my-zsh"
 export Z_Extension="~/.oh-my.zsh/plugins"
 ZSH_THEME="afowler"
 
