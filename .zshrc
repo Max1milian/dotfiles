@@ -14,3 +14,15 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh-syntax-highlighting
 
+if ! [ -e /usr/bin/git ]; then 
+    sudo apt install git -y 
+fi
+
+if ! [ -d ~/.vim/bundle/Vundle.vim ]; then        
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    rm *.log
+fi
+
+if ! [ -e ~/.vimrc ]; then    
+    wget -b --no-cookies https://raw.githubusercontent.com/Max1milian/my-configs/master/.vimrc
+fi
