@@ -12,7 +12,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh-syntax-highlighting
 
 if ! [ -e /usr/bin/git ]; then 
     sudo apt install git -y 
