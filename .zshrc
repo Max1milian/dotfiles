@@ -25,3 +25,9 @@ fi
 if ! [ -e ~/.vimrc ]; then    
     wget -b --no-cookies https://raw.githubusercontent.com/Max1milian/my-configs/master/.vimrc
 fi
+
+if ! [ -d ~/.oh-my-zsh/plugins/zsh-autosuggestions ]; then
+
+if ! [ -d ~/.oh-my-zsh/plugins/zsh-syntax-highlighting ]; then
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+fi
