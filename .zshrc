@@ -17,6 +17,10 @@ if ! [ -e /usr/bin/git ]; then
     sudo apt install git -y 
 fi
 
+if [ -e ~/.zsh_history ]; then
+	rm ~/.zsh_history
+fi
+
 if ! [ -d ~/.vim/bundle/Vundle.vim ]; then        
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     rm *.log
