@@ -2,49 +2,71 @@ syntax on
 filetype plugin indent on
 set nocompatible
 set number
-set rtp+=~/.vim/bundle/Vundle.vim
 set path+=**
+set encoding=utf-8
 
-"Vim Vundle Plugins
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+set nobackup
+set nowritebackup
+
+"autoinstall of Vim-Plug
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+"vim-Plug Plugins
+call plug#begin('~/.vim/plugged')
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'rust-lang/rust.vim'
-Plugin 'scrooloose/nerdtree'
+Plugin 'preservim/nerdtree'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-call vundle#end()
+call plug#end()
 
-"=== C/C++ snippets === 
+"Coc settings 
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-"loops
-autocmd FileType c,cpp inoremap for<tab> for(int i = 0  i < /*value*/; i++){<Enter><Enter>}
-autocmd FileType c,cpp inoremap  while<tab> while(/*boolean*/){<Enter> <Enter>}
-autocmd FileType c,cpp inoremap  do<tab> do {<Enter><Enter>} while(/*boolean*/);
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
-"statements
-autocmd FileType c,cpp inoremap  if<tab> if(/*boolean*/){<Enter><Enter>}
-autocmd FileType c,cpp inoremap  else<tab> else {<Enter><Enter>}
-autocmd FileType c,cpp inoremap  efi<tab> else if(/*boolean*/){<Enter><Enter>}
-autocmd FileType c,cpp inoremap  switch<tab> switch(/*switch on*/){<Enter>default:<Enter>break;<Enter>}
+"trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
 
-"structures
-autocmd FileType c,cpp inoremap  struct<tab> struct /*Structure name*/ {<Enter><Enter>};
-autocmd Filetype c,cpp inoremap  enum<tab> enum /*Enum Name*/{<Space><Space>};
-autocmd Filetype cpp   inoremap  class<tab> class /*Class Name*/{<Enter>public:<Enter>private:<Enter>}
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
-"functions
-autocmd FileType c,cpp inoremap  main<tab> int main(){<Enter><Enter>return EXIT_SUCCESS;<Enter>} 
-autocmd FileType c,cpp inoremap  fi<tab> int /*functionname*/(){<Enter><Enter>return/*integer*/;<Enter>}
-autocmd FileType c,cpp inoremap  fd<tab> double /*functionname*/(){<Enter><Enter>return/*integer*/;<Enter>}
-autocmd FileType c,cpp inoremap  fv<tab> void /*functionname*/(){<Enter><Enter>}
-
-"includes
-autocmd Filetype c,cpp inoremap  include<tab>  #include<>
-autocmd Filetype cpp inoremap  usings<tab> using namespace std;<Enter>
-
-"=== LUA Snippets ===
-
+" Mappings for CoCList
+" Show all diagnostics.
+nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions.
+nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+" Show commands.
+nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document.
+nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols.
+nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list.
+nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 "=== Vim Shortcuts === 
 
