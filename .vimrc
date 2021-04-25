@@ -77,4 +77,4 @@ map <f3> <Esc>:q!<Enter>
 
 "Addons
 map <f5> <Esc>:NERDTree<Enter>
-map <f4> <Esc>:PluginInstall<Enter>
+map <f4> <Esc>:PlugInstall<Enter>
