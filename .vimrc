@@ -17,10 +17,10 @@ endif
 
 "vim-Plug Plugins
 call plug#begin('~/.vim/plugged')
-Plugin 'https://github.com/vim-airline/vim-airline.git'
-Plugin 'https://github.com/vim-airline/vim-airline-themes.git'
-"Plugin 'rust-lang/rust.vim'
-Plugin 'scrooloose/nerdtree'
+Plug 'https://github.com/vim-airline/vim-airline.git'
+Plug 'https://github.com/vim-airline/vim-airline-themes.git'
+"Plug 'rust-lang/rust.vim'
+Plug 'scrooloose/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
