@@ -21,11 +21,6 @@ if [ -e ~/.zsh_history ]; then
 	rm ~/.zsh_history
 fi
 
-if ! [ -d ~/.vim/bundle/Vundle.vim ]; then        
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    rm *.log
-fi
-
 if ! [ -e ~/.vimrc ]; then    
     wget -b --no-cookies https://raw.githubusercontent.com/Max1milian/my-configs/master/.vimrc
 fi
