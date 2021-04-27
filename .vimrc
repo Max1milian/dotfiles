@@ -44,6 +44,14 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
+"coc-extensions
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-eslint', 
+  \ 'coc-prettier', 
+  \ ]
+
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
