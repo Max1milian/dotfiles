@@ -51,6 +51,7 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-pairs',
   \ 'coc-eslint', 
+  \ 'coc-pyright',
   \ 'coc-prettier', 
   \ ]
 
