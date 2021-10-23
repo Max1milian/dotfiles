@@ -13,10 +13,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-if ! [ -e /usr/bin/git ]; then 
-    sudo apt install git -y 
-fi
-
 if [ -e ~/.zsh_history ]; then
 	rm ~/.zsh_history
 fi
