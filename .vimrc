@@ -25,7 +25,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
 Plug 'honza/vim-snippets'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'christoomey/vim-tmux-manager'
+Plug 'cdelledonne/vim-cmake'
 
 call plug#end()
 
@@ -54,7 +54,8 @@ let g:coc_global_extensions = [
   \ 'coc-pairs',
   \ 'coc-eslint', 
   \ 'coc-pyright',
-  \ 'coc-prettier', 
+  \ 'coc-prettier',
+  \ 'coc-clang'
   \ ]
 
 " GoTo code navigation.
@@ -81,6 +82,8 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+" === CMake Coc settings === 
+let g:cmake_link_compile_commands = 1
 "=== Vim Shortcuts === 
 
 "vim
@@ -89,5 +92,9 @@ map <f2> <Esc>:wq<Enter>
 map <f3> <Esc>:q!<Enter>
 
 "Addons
-map <f5> <Esc>:NERDTree<Enter>
 map <f4> <Esc>:PlugInstall<Enter>
+map <f5> <Esc>:NERDTree<Enter>
+
+"CMake commands
+map <f6> <Esc>:CMakeGenerate<Enter>
+map <f7> <Esc>:CMakeBuild<Enter>
