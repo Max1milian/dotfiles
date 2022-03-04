@@ -1,4 +1,4 @@
-export ZSH="$(pwd)/.oh-my-zsh"
+export ZSH="/home/$(whoami)/.oh-my-zsh"
 export Z_Extension="~/.oh-my.zsh/plugins"
 ZSH_THEME="afowler"
 
@@ -18,7 +18,7 @@ if [ -e ~/.zsh_history ]; then
 fi
 
 if ! [ -e ~/.vimrc ]; then    
-    wget -b --no-cookies https://raw.githubusercontent.com/Max1milian/my-configs/master/.vimrc
+    wget -b --no-cookies https://raw.githubusercontent.com/Max1milian/my-configs/master/.vimrc -o ~/.config/nvim/init.vim 
 fi
 
 if ! [ -d ~/.oh-my-zsh/plugins/zsh-autosuggestions ]; then
