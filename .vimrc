@@ -98,3 +98,4 @@ map <f5> <Esc>:NERDTree<Enter>
 "CMake commands
 map <f6> <Esc>:CMakeGenerate<Enter>
 map <f7> <Esc>:CMakeBuild<Enter>
+map <f8> <Esc>:CMakeClose<Enter>   
