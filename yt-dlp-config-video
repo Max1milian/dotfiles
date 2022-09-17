@@ -1,0 +1,86 @@
+## Benutzerspezifische Beispielkonfigurationsdatei für yt-dlp in ~/.config/yt-dlp/config
+## Zeilen, die mit einem Rautenzeichen (#) beginnen, sind entweder Kommentare oder deaktivierte Argumente
+# Lade bei Vorliegen von zwei höchst-qualitativen separaten Dateien für Audio und Video diese getrennt herunter
+# (aber nur die in den Formaten m4a bzw. mp4);
+# ansonsten nehme die höchst-qualitative AV-Kombi-Einzeldatei:
+-f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best"
+# Bevorzuge freie (Video-)Formate, außer ein spezifisches ist gefordert:
+#--prefer-free-formats
+# Der Zielordner ist das aktuelle Terminal-Arbeitsverzeichnis; entferne die Youtube-ID aus dem Namen/Titel des Videos:
+-o "%(title)s.%(ext)s"
+# Der Zielordner ist ~/Videos; der Dateiname besteht – wie in der Voreinstellung – aus dem Namen/Titel und der YT-ID
+# des Videos sowie der Dateiendung:
+#-o "~/Videos/%(title)s-%(id)s.%(ext)s"
+#lädt nur die Audioinformationen runter
+#-x
+# Beschränke Dateinamen auf reine ASCII-Zeichen und vermeide dort u.a. "&" und Leerzeichen, aber auch Umlaute;
+# wobei Leerzeichen in Unterstriche (_) sowie Umlaute in a, o und u umgewandelt werden:
+#--restrict-filenames
+# Benutze den externen Downloader aria2 (das gleichnamige Paket muss installiert sein!):
+--external-downloader "aria2c"
+# Übergebe die folgenden Argumente an aria2:
+# Minimale Teilstück-Größe 1MiB; maximale Anzahl an gleichzeitigen Verbindungen pro Server und pro Download;
+# bei HTTP(S)/FTP-Downloads setze bei nur teilweise von anderenProgrammen heruntergeladenen Dateien den
+# Download fort;
+# =>=>=> Achtung: Diese Option kann zu Störungen führen, falls youtube-dl einen HLS herunterlädt! Im Zweifelsfalle
+# diese Option bitte NICHT verwenden:
+#--external-downloader-args "-k1M -x8 -c"
+# Zeige den Download-Fortschritt in immer neuen Zeilen an =>=>=> Achtung: Diese Option bitte NICHT zusammen
+# mit "–external-downloader"-Optionen verwenden, um potenzielle Störungen auszuschließen:
+#--newline
+# Zeige den Download-Fortschritt in der Titelleiste des Terminalfensters an; zusammen mit
+# "–external-downloader"-Optionen wird evtl. lediglich der erfolgreiche Abschluss des Downloads bekanntgegeben;
+# =>=>=> Achtung: Diese Option kann zu Störungen führen, falls youtube-dl durch mpv aufgerufen wird! Im Zweifelsfalle
+# diese Option bitte NICHT verwenden:
+#--console-title
+# Schreibe die Metadaten mit in die Ausgabedatei:
+--add-metadata
+#setzt die Audioqualität auf die höchste Stufe
+#--audio-quality 0
+#setzt das Format
+#--audio-format mp3
+# Umgehe geographische Beschränkungen durch Fälschen des "X-Forwarded-For"-HTTP-Headers (experimentell):
+--geo-bypass
+# Bei Download-Fehlern trotzdem weiter herunterladen:
+--ignore-errors
+# Erzwinge das Fortsetzen des Downloads von teilweise heruntergeladenen Dateien:
+--continue
+# Schreibe die Video-Beschreibung in eine ".description"-Datei, bis auf die Endung hat diese den gleichen
+# Namen wie die Video-Datei; zu öffnen mit jedem Texteditor:
+#--write-description
+# Schreibe Video-Anmerkungen bzw. -Kommentare (sofern verfügbar) in eine ".annotations.xml"-Datei:
+#--write-annotations
+# Schreibe Untertitel-Datei(en) (sofern verfügbar); diese Option wird zwingend von der Option "--embed-subs"
+# vorausgesetzt (entweder/oder, aber auch zusammen mit der Option "--write-auto-sub"):
+#--write-sub
+# Schreibe automatisch generierte Untertitel-Datei(en) (nur bei YouTube und sofern verfügbar); diese Option wird
+# zwingend von der Option "--embed-subs" vorausgesetzt (entweder/oder, aber auch zusammen mit
+# der Option "--write-sub"):                                     
+#--write-auto-sub
+# Lade alle für das Video verfügbaren Untertitel-Dateien herunter; dies sind allerdings ca. 110 an der Zahl;
+# diese Anzahl kann dann allerdings dazu führen, dass – falls dies gewollt war – das Einbetten des Vorschaubildes
+# fehlschlägt ("ERROR: too many atoms"):                              
+#--all-subs
+# Liste alle für das Video verfügbaren Untertitel(-Sprachen) auf (aufzurufen als alleinige Option);
+# =>=>=> Bei der Auflistung wird zwischen automatisch generierten Untertiteln ("automatic captions") und normalen,
+# manuell erstellten Untertiteln ("subtitles") unterschieden; dabei können – falls für eine bestimmte Sprache beide
+# Typen vorliegen – die jeweiligen Dateien völlig identisch sein (falls deren Löschung mit der Option "-k" verhindert
+# wurde, kann man diese vergleichen); manuell erstellte Untertiteln-Dateien erkennt man daran, dass dort der Text
+# überall linksbündig ist (sie dienen wohl als Vorlage für die automatisch generierten Dateien):             
+#--list-subs
+# Gewünschtes Untertitel-Format, akzeptiert Format-Vorwahlen, z.B.: "srt" oder "ass/srt/best"; ist keines
+# der angegebenen Formate vorhanden, wird anstelle dessen ein tatsächlich verfügbares genommen:
+#--sub-format srt
+# Sprache(n) der herunterzuladenen Untertitel, bei mehreren durch Kommatas getrennt; durch den Aufruf mit der
+# (alleinigen) Option "--list-subs" kriegt man die Sprach-Kürzel heraus (z.B. ist "de" deutsch); es werden auch
+# nur die tatsächlich verfügbaren Sprachen heruntergeladen:
+#--sub-lang de,en,en-GB,en-US,fr
+# Bette die Untertitel (sofern vorhanden) direkt in das Video ein (nur bei MP4-, WEBM- u. MKV-Containern), sie
+# sind dann allerdings ein- u. ausblendbar; diese Option setzt zwingend die Option "--write-sub" bzw. "--write-auto-
+# sub" voraus (entweder/oder, aber auch beide); die heruntergeladenen Untertitel-Datei(en) wird (bzw. werden) nach
+# dieser Aktion automatisch gelöscht (falls deren Löschung nicht mit der Option "-k" verhindert wurde):
+#--embed-subs
+# Bette das Vorschaubild (sofern vorhanden) direkt in das Audio bzw. Video ein, es erscheint bei Audios permanent
+# und bei Videos für ca. 1 Sekunde als "Umschlag-Kunst" (zumindest beim VLC; das Paket "atomicparsley" muss installiert
+# sein!):
+--embed-thumbnail
