@@ -87,3 +87,5 @@ map <f5> <Esc>:NERDTreeToggle<Enter>
 map <f6> <Esc>:CMakeGenerate<Enter>
 map <f7> <Esc>:CMakeBuild<Enter>
 map <f8> <Esc>:CMakeClose<Enter>   
+map <f9> <Esc>:CMakeClean<Enter>
+map <f10> <Esc>:make<Enter>
