@@ -19,7 +19,7 @@ fi
 
 if ! [ -e ~/.vimrc ]; then    
     mkdir -p ~/.config/nvim
-    wget -b --no-cookies https://raw.githubusercontent.com/Max1milian/my-configs/master/.vimrc -o ~/.config/nvim/init.vim 
+    wget -b --no-cookies https://raw.githubusercontent.com/Max1milian/my-configs/master/.vimrc -O ~/.config/nvim/init.vim 
 fi
 
 if ! [ -d ~/.oh-my-zsh/plugins/zsh-autosuggestions ]; then
