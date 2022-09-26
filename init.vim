@@ -13,10 +13,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin' |
+            \ Plug 'ryanoasis/vim-devicons'
+Plug 'fladson/vim-kitty'
 Plug 'honza/vim-snippets'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'cdelledonne/vim-cmake'
 
 call plug#end()
@@ -25,6 +26,7 @@ call plug#end()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
@@ -72,9 +74,23 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " === CMake Coc settings === 
 let g:cmake_link_compile_commands = 1
-"=== Vim Shortcuts === 
-
-"vim
+let g:cmake_generate_options = ["-DCMAKE_C_COMPILER=clang", "-DCMAKE_CXX_COMPILER=clang++"]
+"=== Vim Settings === 
+let g:load_doxygen_syntax=1
+let g:airline_theme="ayu_mirage"
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+                \ 'Modified'  :'✹',
+                \ 'Staged'    :'✚',
+                \ 'Untracked' :'✭',
+                \ 'Renamed'   :'➜',
+                \ 'Unmerged'  :'═',
+                \ 'Deleted'   :'✖',
+                \ 'Dirty'     :'✗',
+                \ 'Ignored'   :'☒',
+                \ 'Clean'     :'✔︎',
+                \ 'Unknown'   :'?',
+                \ }
+"vim Shortcuts
 map <f1> <Esc>:w<Enter>
 map <f2> <Esc>:wq<Enter>
 map <f3> <Esc>:q!<Enter>
@@ -85,7 +101,7 @@ map <f5> <Esc>:NERDTreeToggle<Enter>
 
 "CMake commands
 map <f6> <Esc>:CMakeGenerate<Enter>
-map <f7> <Esc>:CMakeBuild<Enter>
+map <f7> <Esc>:CMakeBuild --parallel 4<Enter>
 map <f8> <Esc>:CMakeClose<Enter>   
 map <f9> <Esc>:CMakeClean<Enter>
 map <f10> <Esc>:make<Enter>
