@@ -44,8 +44,12 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-pairs',
   \ 'coc-eslint', 
-  \ 'coc-pyright',
-  \ 'coc-prettier',
+  \ 'coc-cmake',
+  \ 'coc-git',
+  \ 'coc-sh',
+  \ 'coc-clang-format-style-options',
+  \ 'coc-rls',
+  \ 'coc-rust-analyzer'
   \ ]
 
 " GoTo code navigation.
@@ -101,7 +105,7 @@ map <f5> <Esc>:NERDTreeToggle<Enter>
 
 "CMake commands
 map <f6> <Esc>:CMakeGenerate<Enter>
-map <f7> <Esc>:CMakeBuild --parallel 4<Enter>
+map <f7> <Esc>:CMakeBuild --parallel 12<Enter>
 map <f8> <Esc>:CMakeClose<Enter>   
 map <f9> <Esc>:CMakeClean<Enter>
 map <f10> <Esc>:make<Enter>
