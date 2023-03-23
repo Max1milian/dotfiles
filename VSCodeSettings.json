@@ -1,0 +1,26 @@
+
+
+{
+    //Workbench settings
+    "workbench.startupEditor": "newUntitledFile",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.colorTheme": "Material Theme Darker",
+    //telemetry settings
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    //C/C++ settings
+    "C_Cpp.autocomplete": "Default",
+    "C_Cpp.default.compilerPath": "g++",
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.formatting": "clangFormat",
+    "C_Cpp.clang_format_path": "clang-format",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "C_Cpp.suggestSnippets": true,
+    "C_Cpp.intelliSenseEngine": "Default",
+    "workbench.iconTheme": "vscode-icons",
+    "editor.suggestSelection": "first",
+    "explorer.confirmDelete": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    
+}
