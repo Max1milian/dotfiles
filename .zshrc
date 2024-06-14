@@ -35,7 +35,21 @@ if [ -d ~/vcpkg/ ]; then
 	bashcompinit
 	source /home/maximilian/vcpkg/scripts/vcpkg_completion.zsh
 fi
-source /home/maximilian/.vulkansdk/1.3.280.1/setup-env.sh
+
+if [ -d ~/.oh-my-zsh/ ]; then 
+	if ! [ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
+		git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+	fi
+
+	if ! [ -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
+		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+	fi
+fi
+
+
+if [ -d ~/.vulkansdk/ ]; then
+	source /home/maximilian/.vulkansdk/1.3.283.0/setup-env.sh
+fi
 
 alias vi="nvim"
 alias vim="nvim"
