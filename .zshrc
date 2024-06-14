@@ -35,7 +35,7 @@ if [ -d ~/vcpkg/ ]; then
 	#adding vcpkg autocompletion to zsh
 	autoload bashcompinit
 	bashcompinit
-	source /home/maximilian/vcpkg/scripts/vcpkg_completion.zsh
+	source /home/$(whoami)/vcpkg/scripts/vcpkg_completion.zsh
 fi
 
 if [ -d ~/.oh-my-zsh/ ]; then 
