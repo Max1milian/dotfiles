@@ -27,10 +27,12 @@ if [ -d ~/appimages/ ]; then
 fi
 
 if [ -d ~/vcpkg/ ]; then
+	#setting the vcpkg enviroment variables
 	export VCPKG_ROOT=/home/$(whoami)/vcpkg
 	export PATH=$VCPKG_ROOT:$PATH
 	export VCPKG_ARCHITECTURE=x64-linux
 	export CMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake
+	#adding vcpkg autocompletion to zsh
 	autoload bashcompinit
 	bashcompinit
 	source /home/maximilian/vcpkg/scripts/vcpkg_completion.zsh
@@ -46,9 +48,18 @@ if [ -d ~/.oh-my-zsh/ ]; then
 	fi
 fi
 
+if ! [ -d ~/.oh-my-zsh/ ]; then
+	sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+fi
+
+
 
 if [ -d ~/.vulkansdk/ ]; then
-	source /home/maximilian/.vulkansdk/1.3.283.0/setup-env.sh
+	#every vulkan sdk folder has the name of its current version
+	#so instead of hardcoding the current version of it everytime we just iterate through the folder and adding the folder and adding it automatically
+	for d in ~/.vulkansdk/*/ ; do
+		source $d/setup-env.sh
+	done
 fi
 
 alias vi="nvim"
