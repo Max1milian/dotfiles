@@ -69,8 +69,3 @@ alias vim="nvim"
 # Created by `pipx` on 2024-04-28 19:01:24
 export PATH="$PATH:/home/$(whoami)/.local/bin"
 alias sysup="sudo nala update; sudo nala upgrade -y"
-if [ -d .xmake ]; then
-	# >>> xmake >>>
-	test -f "/home/$USER/.xmake/profile" && source "/home/$USER/.xmake/profile"
-	# <<< xmake <<<
-fi
