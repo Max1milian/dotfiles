@@ -1,5 +1,12 @@
 #!/bin/bash
-sudo apt purge -y \
+sudo apt install -y nala kitty; \
+sudo dpkg --add-architecture i386; \
+#sudo mkdir -pm755 /etc/apt/keyrings; \
+#wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /etc/apt/keyrings/winehq-archive.key -; \
+#sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/debian/dists/bookworm/winehq-bookworm.sources; \
+sudo nala update; \
+
+sudo nala purge -y \
 	libreoffice-base-core \
 	libreoffice-calc \
 	libreoffice-common \
@@ -45,10 +52,16 @@ sudo apt purge -y \
 	aisleriot \
 	zutty; \
 
-sudo apt install -y nala; \
+#sudo apt install -y --install-recommends winehq-stable; \
 sudo nala install -y xz-utils \
 	libglm-dev \
+	firmware-linux \
+	gh \
+	curl \
+	htop \
 	cmake \
+	cmake-extras \
+	extra-cmake-modules \
 	libxcb-dri3-0 \
 	libxcb-present0 \
 	libpciaccess0 \
@@ -61,10 +74,12 @@ sudo nala install -y xz-utils \
 	g++-multilib \
 	libwayland-dev \
 	libxrandr-dev \
-	libxcb-randr0-dev libxcb-ewmh-dev \
+	libxcb-randr0-dev \
+	libxcb-ewmh-dev \
 	git \
 	python-is-python3 \
 	python3 \
+	pipx \
 	bison \
 	libx11-xcb-dev \
 	liblz4-dev \
@@ -88,4 +103,8 @@ sudo nala install -y xz-utils \
 	libxi-dev \
 	libudev-dev \
 	libgl1-mesa-dev \
-	clang-format
+	clang-format \
+#	steam \
+	flatpak \
+	fonts-noto \
+	fonts-noto-cjk;
