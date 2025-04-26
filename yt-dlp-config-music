@@ -24,7 +24,7 @@
 # Download fort;
 # =>=>=> Achtung: Diese Option kann zu Störungen führen, falls youtube-dl einen HLS herunterlädt! Im Zweifelsfalle
 # diese Option bitte NICHT verwenden:
-#--external-downloader-args "-k1M -x8 -c"
+--external-downloader-args "-k1M -s16 -x16 -c"
 # Zeige den Download-Fortschritt in immer neuen Zeilen an =>=>=> Achtung: Diese Option bitte NICHT zusammen
 # mit "–external-downloader"-Optionen verwenden, um potenzielle Störungen auszuschließen:
 #--newline
