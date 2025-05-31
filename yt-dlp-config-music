@@ -17,14 +17,14 @@
 # wobei Leerzeichen in Unterstriche (_) sowie Umlaute in a, o und u umgewandelt werden:
 #--restrict-filenames
 # Benutze den externen Downloader aria2 (das gleichnamige Paket muss installiert sein!):
---external-downloader "aria2c"
+#--external-downloader "aria2c"
 # Übergebe die folgenden Argumente an aria2:
 # Minimale Teilstück-Größe 1MiB; maximale Anzahl an gleichzeitigen Verbindungen pro Server und pro Download;
 # bei HTTP(S)/FTP-Downloads setze bei nur teilweise von anderenProgrammen heruntergeladenen Dateien den
 # Download fort;
 # =>=>=> Achtung: Diese Option kann zu Störungen führen, falls youtube-dl einen HLS herunterlädt! Im Zweifelsfalle
 # diese Option bitte NICHT verwenden:
---external-downloader-args "-k1M -s16 -x16 -c"
+#--external-downloader-args "-k1M -s16 -x16 -c"
 # Zeige den Download-Fortschritt in immer neuen Zeilen an =>=>=> Achtung: Diese Option bitte NICHT zusammen
 # mit "–external-downloader"-Optionen verwenden, um potenzielle Störungen auszuschließen:
 #--newline
@@ -38,7 +38,7 @@
 #setzt die Audioqualität auf die höchste Stufe
 --audio-quality 0
 #setzt das Format
---audio-format mp3
+--audio-format opus
 # Umgehe geographische Beschränkungen durch Fälschen des "X-Forwarded-For"-HTTP-Headers (experimentell):
 --geo-bypass
 # Bei Download-Fehlern trotzdem weiter herunterladen:
