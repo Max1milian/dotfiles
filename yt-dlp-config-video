@@ -5,7 +5,7 @@
 # ansonsten nehme die höchst-qualitative AV-Kombi-Einzeldatei:
 -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best"
 # Bevorzuge freie (Video-)Formate, außer ein spezifisches ist gefordert:
-#--prefer-free-formats
+--prefer-free-formats
 # Der Zielordner ist das aktuelle Terminal-Arbeitsverzeichnis; entferne die Youtube-ID aus dem Namen/Titel des Videos:
 -o "%(title)s.%(ext)s"
 # Der Zielordner ist ~/Videos; der Dateiname besteht – wie in der Voreinstellung – aus dem Namen/Titel und der YT-ID
